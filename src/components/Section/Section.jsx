@@ -1,3 +1,5 @@
+import propTypes from 'prop-types';
+
 const Section = ({ children, title }) => {
   return (
     <div>
@@ -5,6 +7,11 @@ const Section = ({ children, title }) => {
       {children}
     </div>
   );
+};
+
+Section.propTypes = {
+  title: propTypes.string,
+  children: propTypes.element.isRequired,
 };
 
 export default Section;
