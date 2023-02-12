@@ -36,11 +36,15 @@ class App extends Component {
     const positiveFeedbackPercent =
       this.countPositiveFeedbackPercentage('good');
     const { good, neutral, bad } = this.state;
+    console.log(Object.keys(this.state));
 
     return (
       <>
         <Section title="Please leave feedback">
-          <FeedbackOptions onLeaveFeedback={this.countFeedback} />
+          <FeedbackOptions
+            options={Object.keys(this.state)}
+            onLeaveFeedback={this.countFeedback}
+          />
         </Section>
         <Section title="Statistic">
           {this.countTotalFeedback() ? (
